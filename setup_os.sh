@@ -20,7 +20,8 @@ sudo apt install software-properties-common \
 		 libssl-dev \
 		 exuberant-ctags \
 		 ncurses-term \
-		 ubuntu-restricted-extras -y
+		 ubuntu-restricted-extras \
+		 squashfs-tools -y
 echo "[DONE] --> Installing base libs...";
 
 echo "[START] Install base softwares...";
@@ -90,7 +91,20 @@ sudo snap install code --classic
 echo "[INSTALLING] IntelliJ...";
 sudo snap install intellij-idea-community --classic
 
-echo "[INSTALLING] Obsidian";
+echo "[INSTALLING] Obsidian...";
 sudo snap install obsidian --classic
 
+echo "[INSTALLING] Postman...";
+sudo snap install postman
+
+echo "[INSTALLING] Flatpak...";
+sudo apt install flatpak -y
+sudo add-apt-repository ppa:flatpak/stable
+sudo apt update -y
+sudo apt install flatpak -y
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 echo "[FINISH] All set!";
+echo "System should be restarted in 10 seconds. To CANCEL [CRTL+C]...";
+sleep 10s
+reboot
