@@ -104,7 +104,10 @@ sudo apt update -y
 sudo apt install flatpak -y
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
+echo "[INSTALLING] Gparted...";
+sudo apt install gparted -y
+
 echo "[FINISH] All set!";
 echo "System should be restarted in 10 seconds. To CANCEL [CRTL+C]...";
-sleep 10s
+sleep 15s
 reboot
